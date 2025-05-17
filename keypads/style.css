@@ -1,0 +1,115 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-section {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.key-button {
+  touch-action: manipulation;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #333;
+  color: #eee;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+small {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.key-button small {
+  margin-top: 0.2rem;
+}
+
+.top-section {
+  flex: 1;
+  background-color: #eee;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.top-section a {
+  font-size: 0.8rem;
+}
+
+.display-text {
+  font-weight: bolder;
+  font-size: 2rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (hover: hover) {
+  .key-button:hover {
+    background-color: #555;
+  }
+}
+
+@media (hover: none) {
+  .key-button:active {
+    background-color: #555;
+  }
+}
+
+@media (min-width: 600px) {
+  .top-section {
+    min-height: 150px;
+  }
+}
+
+.cursor-letter {
+  position: relative;
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+  border-radius: 2px;
+  white-space: pre;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    color: white;
+    background-color: #000;
+  }
+
+  50.01%,
+  100% {
+    color: #000;
+    background-color: transparent;
+  }
+}
