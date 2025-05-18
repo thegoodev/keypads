@@ -5,16 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#007bff">
-  <title>LetterWise Emulator</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>MultiTap</title>
+  <link rel="stylesheet" href="keypad/style.css" />
 </head>
 
 <body>
 
-  <main class="top-section">
+  <div class="top-section">
     <div class="row">
-      <a href="/">Home</a>
-      <small>LetterWise Emulator</small>
+      <a href="index.html">Home</a>
+      <small id="name">Loading...</small>
     </div>
     <div id="display" class="display-text"><span class="cursor-letter"> </span></div>
     <div class="row">
@@ -22,7 +22,7 @@
       <small>Characters: <span id="c">0</span></small>
       <small>KSPC: <span id="kspc">0</span></small>
     </div>
-  </main>
+  </div>
 
   <div class="bottom-section">
     <button id="backspace" class="key-button">&#9003;</button>
@@ -41,8 +41,11 @@
     <button id="0" class="key-button">0<small>␣</small></button>
     <button id="#" class="key-button">#<small>&nbsp;</small></button>
   </div>
-
-  <script src="letterwise.js"></script>
+  
+  <script src="keypad/keypad.js"></script>
+  <script src="keypad/multitap.js"></script>
+  <script src="keypad/letterwise.js"></script>
+  <script src="keypad/main.js"></script>
 </body>
 
 </html>
