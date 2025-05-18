@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta name="theme-color" content="#5e38217a">
+
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Keypads!" />
@@ -18,81 +20,111 @@
     <link rel="manifest" href="manifest.json">
     <style>
         body {
-            margin: 0;
-            padding: 0;
             font-family: system-ui, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .homepage {
-            display: flex;
-            flex-direction: column;
+            margin: 0;
+            padding: 1.5rem;
+            background: #f0e2c8;
+            color: #5e3821;
+            line-height: 1.6;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 100vh;
-            padding: 2rem;
+            max-width: 800px;
         }
 
-        .title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            max-width: 500px;
+        header {
             margin-bottom: 2rem;
         }
 
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .home-button {
-            text-decoration: none;
-            background-color: #007bff;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0.5rem;
+        .description {
+            margin: 0 auto;
             font-size: 1rem;
-            transition: background-color 0.2s;
         }
 
-        .home-button:hover {
-            background-color: #0056b3;
+        section {
+            margin-bottom: 2rem;
         }
 
-        .home-button.secondary {
-            background-color: #6c757d;
+        .typing-method {
+            background: #f8f2e7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
-        .home-button.secondary:hover {
-            background-color: #5a6268;
+        .typing-method h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
         }
 
-        @media (min-width: 600px) {
-            .button-group {
-                flex-direction: row;
-            }
+        .typing-method p a {
+            color: #e55016;
+            text-decoration: none;
+        }
+
+        .launch-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #e55016;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .launch-button:hover {
+            background: #f77422;
         }
     </style>
 </head>
 
 <body>
-    <main class="homepage">
-        <h1 class="title">Keypads!</h1>
+
+    <header>
+        <h1>Keypads!</h1>
         <p class="description">
-            Here you can emulate various input methods from yesteryear, for more info on how each method works please
-            just google it. Try the LetterWise Emulator.
+            Welcome to the retro world of mobile typing. Here you can explore and relive the glory days of texting on
+            classic 12-key keypads! Try out Multi-tap, LetterWise, or T9 emulators and type like it's 1999.
         </p>
-        <div class="button-group">
-            <a href="keypad.html?emulator=letterwise" class="home-button">LetterWise</a>
-            <a href="keypad.html?emulator=letterwise" class="home-button">MultiTap</a>
-        </div>
+    </header>
+
+    <main>
+        <section class="typing-method">
+            <h2>Multi-tap</h2>
+            <p>
+                Press the same key multiple times to get the letter you want. It’s slow, it’s clunky, it’s iconic.
+                <a href="https://en.wikipedia.org/wiki/Multi-tap" target="_blank" rel="noopener noreferrer">Learn
+                    more</a>.
+            </p>
+            <a href="keypad.html?emulator=multitap" class="launch-button">Try Multi-tap</a>
+        </section>
+
+        <section class="typing-method">
+            <h2>LetterWise</h2>
+            <p>
+                Smarter than Multi-tap, LetterWise guesses what letter you're aiming for. Kind of like predictive text
+                before it was cool.
+                <a href="https://en.wikipedia.org/wiki/LetterWise" target="_blank" rel="noopener noreferrer">Learn
+                    more</a>.
+            </p>
+            <a href="keypad.html?emulator=letterwise" class="launch-button">Try LetterWise</a>
+        </section>
+
+        <section class="typing-method">
+            <h2>T9</h2>
+            <p>
+                T9 changed the game. Type full words with just a few taps and let the phone do the guessing.
+                <a href="https://en.wikipedia.org/wiki/T9_(predictive_text)" target="_blank"
+                    rel="noopener noreferrer">Learn more</a>.
+            </p>
+            <a href="t9.html" class="launch-button">Try T9</a>
+        </section>
     </main>
 
     <script>
