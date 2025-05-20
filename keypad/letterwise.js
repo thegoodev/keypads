@@ -11,7 +11,7 @@ class LetterWiseKeypad extends Keypad {
     handleKeyPress(keyId) {
         super.handleKeyPress(keyId);
         switch (keyId) {
-            case "backspace":
+            case "␈":
                 this.setText(this.text.slice(0, -1));
 
                 const filter = Object.values(Keypad.keyMap).find(list => list.includes(this.text.slice(-1)));
@@ -25,7 +25,7 @@ class LetterWiseKeypad extends Keypad {
                 console.log(this.lastDist);
                 break;
 
-            case "next":
+            case "␚":
                 let last = this.text.slice(-1);
                 let next = this.lastDist[(this.lastDist.indexOf(last) + 1) % this.lastDist.length];
                 this.setText(this.text.slice(0, -1) + next);

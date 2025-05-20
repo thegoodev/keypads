@@ -7,12 +7,13 @@ class MultiTapKeypad extends Keypad {
   }
 
   handleKeyPress(keyId) {  
-    if (!(keyId in Keypad.keyMap)) return;
 
-    if (keyId == "*") {
+    if (keyId == "␈") {
       this.setText(this.text.slice(0, -1));
       return;
     }
+
+    if (!(keyId in Keypad.keyMap)) return;
 
     const chars = Keypad.keyMap[keyId];
 
@@ -34,7 +35,7 @@ class MultiTapKeypad extends Keypad {
       this.lastKey = null;
       this.pressCount = 0;
       this.updateDisplay();
-    }, 800);
+    }, 1000);
     
     super.handleKeyPress(keyId);
   }
